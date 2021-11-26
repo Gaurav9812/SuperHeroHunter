@@ -81,7 +81,7 @@ function displaySearchResult(str)
             // adding listener to button
             getDetails.addEventListener('click',function(){
                 localStorage.setItem("details", characterfound[i].id);
-               location.href="../super_hero_page/index.htm" 
+               location.href="./super_hero_page/index.htm" 
             })
 
             //favourite icon
