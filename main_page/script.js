@@ -135,5 +135,5 @@ favButton.addEventListener('click',function(){
     }
  
     localStorage.setItem("favourites", JSON.stringify(favourites));
-    location.href='../fav_page/Index.htm';
+    location.href='./fav_page/Index.htm';
 });
