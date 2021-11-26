@@ -121,10 +121,14 @@
         right:0rem;
     }
 }
-@media screen and (max-width:813px) {
+@media screen and (max-width:400px) {
   
     #Main-Heading{
         font-size: 1.5rem;
+    }
+    ul
+    {
+        padding: 0rem;
     }
     #favourite-characters li{
     flex-direction: column;

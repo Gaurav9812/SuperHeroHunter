@@ -35,6 +35,7 @@ button{
 }
 #submit{
 background-color: blue;
+display:none;
 }
 #fav
 {
@@ -87,4 +88,9 @@ background-color: blue;
 .fav-icon i{
     position: absolute;
     font-size: 1.5rem;
+}
+@media screen and (max-width:400px) {
+    h1 {
+        font-size: 2rem;
+    }
 }
