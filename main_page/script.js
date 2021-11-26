@@ -106,11 +106,11 @@ function displaySearchResult(str)
                        this.style.color="red";
                         
                         favourites[characterfound[i].id]=true;
-                        
+                       addingToLocal(); 
                     } else{
                         this.style.color="black";
                         delete favourites[characterfound[i].id];
-                        
+                        addingToLocal();
                         
                     }
                }) ;
@@ -163,3 +163,8 @@ favButton.addEventListener('click',function(){
     localStorage.setItem("favourites", JSON.stringify(favourites));
     location.href='./fav_page/Index.htm';
 });
+
+function addingToLocal()
+{
+    localStorage.setItem("favourites", JSON.stringify(favourites));
+}
