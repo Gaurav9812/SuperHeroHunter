@@ -1,0 +1,90 @@
+
+body{
+    background-image: url('./247074.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+}
+h1{
+    font-size: 3rem;
+    line-height: 6rem;
+    letter-spacing: 1rem;
+    color: #fff;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff, 0 0 120px #fff;
+    font-family: emoji;
+    font-style: italic;
+}
+
+#search
+{
+    width: 40%;
+    height: 2.4rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: system-ui;
+}
+button{
+    height: 2.7rem;
+    width: 6rem;
+    padding: 0px 2px 2px 2px;
+    font-size: 1.5rem;
+    font-family: fantasy;
+    font-style: italic;
+
+}
+#submit{
+background-color: blue;
+}
+#fav
+{
+    background-color: red;
+}
+#search-result
+{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.character-div
+{
+    margin-right: 3rem;
+    margin-left: 3rem;
+    position: relative;
+}
+.character-image
+{
+    width: 13rem;
+        height: 17rem;
+        border-radius: 2rem;
+        box-shadow: 0 0 10px 5px red;
+}
+.character-name
+{
+    margin-bottom: 0;
+    font-size: 1.6rem;
+    font-family: fantasy;
+    color: wheat;
+}
+.character-details
+{
+    background-color: grey;
+    margin: 0;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    font-family: fantasy;
+    font-weight: 900;
+}
+.fav-icon
+{
+    position: absolute;
+    /* background: wheat; */
+    right: 1.7rem;
+    top: 5rem;
+}
+
+.fav-icon i{
+    position: absolute;
+    font-size: 1.5rem;
+}

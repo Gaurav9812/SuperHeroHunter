@@ -1,0 +1,146 @@
+
+    body{
+        background-image: url('./wallpaperflare.com_wallpaper\ \(1\).jpg');
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        text-align: center;
+    }
+#Main-Heading
+{
+    color: #fff;
+    letter-spacing: 1rem;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff, 0 0 120px #fff;
+}
+#else-heading
+{
+    margin-top: 4rem;
+    color: darkred;
+    letter-spacing: 1px;
+    font-size: 4rem;
+}
+.home
+{
+    font-size: 4rem;
+    color: #fff;
+    position: fixed;
+    right: 4rem;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff, 0 0 120px #fff;
+    animation: tube 1s ease-in-out infinite;
+}
+@keyframes tube {
+    from{
+       color: #fff;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff, 0 0 120px #fff;
+   
+    }
+    to{
+        color: red;
+        text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px red, 0 0 80px red, 0 0 120px red;
+        
+    }
+    
+}
+    .character-image
+{
+    width: 13rem;
+        height: 17rem;
+        border-radius: 2rem;
+        box-shadow: 0 0 10px 5px red;
+}
+.character-name
+{
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    font-family: fantasy;
+    color: wheat;
+}
+#favourite-characters li{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.power-stat-div-outer
+{
+    background: rgba(255,255,255,0.1);
+    box-shadow: 10px 10px 20px -10px rgb(255 255 255 / 20%);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    margin-left: 3rem;
+    padding: 1rem;
+}
+.powerLevel-outer-div
+{
+    font-weight: 700;
+    /* display: flex; */
+    margin-bottom: rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: unset;
+    letter-spacing: 2px;
+    font-family: sans-serif,monospace;
+    font-style: italic;
+}
+.powerLevel{
+    width: 45vw;
+    height: 1vh;
+    border-radius: 1rem;
+    background-color: black;
+}
+.level{
+    background-color: darkred;
+    width: 0%;
+    height: 1vh;
+    border-radius: 1rem;
+}
+.favButton
+{
+    color: navajowhite;
+    font-weight: 800;
+    font-size: 1.01rem;
+    background: darkred;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 12px 4px red;
+}
+.details
+{
+    background: green;
+    box-shadow: 2px 2px 12px 7px green;
+    margin-left: 2rem;
+}
+@media screen and (max-width:813px) {
+    .character-image {
+        width: 16rem;
+        height: 21rem;
+    }
+    .home
+    {
+        font-size: 3rem;
+        right:0rem;
+    }
+}
+@media screen and (max-width:813px) {
+  
+    #Main-Heading{
+        font-size: 1.5rem;
+    }
+    #favourite-characters li{
+    flex-direction: column;
+    align-items: center;
+    }
+    .power-stat-div-outer
+    {
+        margin-left: 0rem;
+    }
+    .character-image {
+        width: 20rem;
+        height: 24rem;
+    }
+    .favButton
+    {
+        margin: 0.5rem;
+    }
+
+}
