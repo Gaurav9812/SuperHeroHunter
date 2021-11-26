@@ -77,6 +77,10 @@ display:none;
     font-family: fantasy;
     font-weight: 900;
 }
+.character-details:hover
+{
+    background-color: blue;
+}
 .fav-icon
 {
     position: absolute;

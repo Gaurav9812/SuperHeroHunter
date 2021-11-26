@@ -76,7 +76,8 @@ function displaySearchResult(str)
             var getDetails=document.createElement('p');
             getDetails.innerText="Get Details";
             getDetails.classList.add('character-details');
-           
+            getDetails.style.cursor = "pointer";
+
             // adding listener to button
             getDetails.addEventListener('click',function(){
                 localStorage.setItem("details", characterfound[i].id);
@@ -144,6 +145,7 @@ function clearSearchResult()
 }
 
 //event listener on favorite button
+favButton.style.cursor = "pointer";
 favButton.addEventListener('click',function(){
     
     var obj=JSON.parse(localStorage.getItem("favourites"));
