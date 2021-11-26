@@ -1,9 +1,11 @@
+//fetching elements
 var favourites={};
 var obj=JSON.parse(localStorage.getItem("favourites"));
 var xhrRequest=new XMLHttpRequest();
 var list=document.getElementById('favourite-characters');
 var favoritesfound;
 
+//requesting api for data 
 function getFavourites(obj){
 if(Object.keys(obj).length!=0)
    {favourites=obj;
@@ -30,17 +32,19 @@ if(Object.keys(obj).length!=0)
  }
 }
 getFavourites(obj);    
-
+//if request successfull
     xhrRequest.onload=function(){
 
         var response=JSON.parse(xhrRequest.response);
         console.log(response);
         
+        //Character name
         var div=document.createElement('div');
         var p=document.createElement('p');
         p.innerText=response.name;
         p.classList.add('character-name');
         
+        //Character image
         var img=document.createElement('img');
         img.setAttribute('src',response.image.url);
         img.setAttribute('alt',"image of "+response.name);
@@ -52,12 +56,10 @@ getFavourites(obj);
         div.appendChild(img);
         li.appendChild(div);
 
+       // powerstats div 
         var powerStatDiv=document.createElement('div');
         var powerstats=response.powerstats;
         powerStatDiv.classList.add('power-stat-div-outer');
-        // var powerStatDivHeading=document.createElement('h1');
-        // powerStatDivHeading.innerHTML="Power Stats";
-        // powerStatDiv.appendChild(powerStatDivHeading);
         
         li.appendChild(powerStatDiv);
         for(let i in powerstats)
@@ -83,6 +85,8 @@ getFavourites(obj);
         var removeFromFav=document.createElement('button');
         removeFromFav.innerHTML="Remove from fav";
         removeFromFav.classList.add('favButton');
+
+        //details button
         var getDetails=document.createElement('button');
         getDetails.innerHTML="more-details";
         getDetails.classList.add('favButton');
@@ -92,6 +96,7 @@ getFavourites(obj);
                location.href="../super_hero_page/index.htm" 
         });
 
+        //removing from favourite
         removeFromFav.addEventListener('click',function(){
             delete favourites[response.id];
             var liElem=document.querySelectorAll('li');
@@ -110,6 +115,7 @@ getFavourites(obj);
 
         powerStatDiv.appendChild(getDetails);
 
+        //filling bars according to num 
         function fillbar(level,end)
         {
             let j=0;
@@ -136,11 +142,5 @@ getFavourites(obj);
 
         list.appendChild(li);
     }    
-    function displayFavourites(favoritesfound)
-    {
-        for(let i=0;i<favoritesfound.length;i++)
-        {
-            console.log(favoritesfound[i]);
-        }
-    }
+    
    

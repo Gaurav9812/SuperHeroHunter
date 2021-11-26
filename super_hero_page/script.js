@@ -1,9 +1,11 @@
+//fetching elements
 var superHeroId=JSON.parse(localStorage.getItem("details"));
 var xhrRequest=new XMLHttpRequest();
 var main=document.getElementById('main-container');
 var mainHeading=document.getElementById('main-heading');
 console.log(superHeroId);
 
+//superhero id if not null sending request to api for data 
 
 if(superHeroId!=null)
 {   console.log(superHeroId);
@@ -15,13 +17,16 @@ else{
     elseH.innerHTML="I wonder how u get it till  here";
 }
     
-
+// if( request ) is successfull
+ 
 xhrRequest.onload=function()
 {
     var response=JSON.parse(xhrRequest.response);
     
+    //heading of page
     mainHeading.innerHTML=response.name;
-    //
+    
+    // adding image 
     var imgDetails=document.createElement('div');
     imgDetails.classList.add('image-details');
     var img=document.createElement('img');
@@ -30,9 +35,15 @@ xhrRequest.onload=function()
     //add class of image
 
     main.appendChild(img);
+   
+    //displaying details of character
+
     var details=document.createElement('div');
     details.classList.add('details-div');
     // var p=document.createElement('p');
+
+    //BIOGRAPHY
+
     var biography=response.biography;
     for(let bio in biography)
     {
@@ -42,6 +53,7 @@ xhrRequest.onload=function()
         details.appendChild(p);
     }
 
+    //APPERANCES
     var appearance=response.appearance;
     for(let bio in appearance)
     {
@@ -54,15 +66,19 @@ xhrRequest.onload=function()
     imgDetails.appendChild(details);
     main.appendChild(imgDetails);
     
+    //adding elements to div
     var powerStatDiv=document.createElement('div');
     var powerstats=response.powerstats;
     powerStatDiv.classList.add('power-stat-div-outer');
     
+
+    //powerstats Heading
     var powerStatDivHeading=document.createElement('h1');
     powerStatDivHeading.innerHTML="Power Stats";
     powerStatDiv.appendChild(powerStatDivHeading);
     
     
+    //powerstat levels
     for(let i in powerstats)
     {
         var powerDiv=document.createElement('div');
@@ -84,7 +100,10 @@ xhrRequest.onload=function()
 
     }
     main.appendChild(powerStatDiv);
+
 }
+//filling bars according to num
+
 function fillbar(level,end)
 {
     let j=0;
@@ -100,4 +119,3 @@ function fillbar(level,end)
 }
 
 
-var home=document.getElementById("home");

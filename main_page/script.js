@@ -1,3 +1,5 @@
+//fetching elements
+
 var searchResult=document.getElementById('search-result');
 var favButton=document.getElementById('fav');
 var favourites={};
@@ -7,6 +9,9 @@ var input=document.getElementById("search");
 input.addEventListener('keyup',makeRequest);
 
 var characterfound;
+
+// requesting api for data
+
 function makeRequest(text)
 {
     xhrRequest.abort();
@@ -17,6 +22,9 @@ function makeRequest(text)
     xhrRequest.send();
     
 }
+
+// if Request successfull
+
 xhrRequest.onload=function(){
 
     var response=JSON.parse(xhrRequest.response);
@@ -38,36 +46,44 @@ xhrRequest.onload=function(){
         }
      }
     }
+  
     displaySearchResult(toSearch);
  
             // addListenerToFav();
             
         }    
 }
-
+// displaying search result
+  
 function displaySearchResult(str)
 {
     for(let i=0;i<characterfound.length;i++)
     {
         if(str==characterfound[i].name.substring(0,str.length))
-        {console.log(characterfound[i]);
+        {
+            // name
             var p=document.createElement('p');
             p.innerText=characterfound[i].name;
             p.classList.add('character-name');
             
+            //image of character
             var img=document.createElement('img');
             img.setAttribute('src',characterfound[i].image.url);
             img.setAttribute('alt',"image of "+characterfound[i].name);
             img.classList.add('character-image');
 
+            //detail button
             var getDetails=document.createElement('p');
             getDetails.innerText="Get Details";
             getDetails.classList.add('character-details');
+           
+            // adding listener to button
             getDetails.addEventListener('click',function(){
                 localStorage.setItem("details", characterfound[i].id);
                location.href="../super_hero_page/index.htm" 
             })
 
+            //favourite icon
             var fav=document.createElement('span');
             fav.innerHTML="<i class='fas fa-heart'></i>";
             fav.setAttribute('bool','false');
@@ -75,9 +91,11 @@ function displaySearchResult(str)
             {
                 fav.style.color="red";
             }
-               fav.addEventListener('click',function(){
+            
+            //adding listener to favourite
+            fav.addEventListener('click',function(){
                 // favourites[characterfound[i].id]=!favourites[characterfound[i].id];
-                console.log(typeof(favourites[characterfound[i].id]));
+            
                 if( favourites[characterfound[i].id])
                 {
                     favourites[characterfound[i].id]=! favourites[characterfound[i].id];
@@ -99,6 +117,7 @@ function displaySearchResult(str)
             fav.classList.add("fav-icon");
             
 
+            //adding elements 
             var div=document.createElement('div');
             div.appendChild(p);
             div.appendChild(img);
@@ -112,6 +131,9 @@ function displaySearchResult(str)
 
     }
 }
+
+//clearing div
+
 function clearSearchResult()
 {
     var child=document.querySelectorAll('#search-result div');
@@ -120,6 +142,8 @@ function clearSearchResult()
         searchResult.removeChild(child[i]);
     }
 }
+
+//event listener on favorite button
 favButton.addEventListener('click',function(){
     
     var obj=JSON.parse(localStorage.getItem("favourites"));
